@@ -3,6 +3,9 @@
 # images uploaded by users
 /public/uploads
 
+# secret admin code
+/.env
+
 # dependencies
 /node_modules
 /.pnp
