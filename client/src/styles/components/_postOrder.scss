@@ -1,0 +1,16 @@
+#admin_postsOrder, #admin_usersOrder {
+    display: none;
+    & + div.chronologique {
+        display: none;
+    }
+    &:checked + div.chronologique {
+        display: initial;
+    }
+
+    & + div + div.antichronologique {
+display: initial;
+    }
+    &:checked + div + div.antichronologique {
+        display: none;
+    }
+}
