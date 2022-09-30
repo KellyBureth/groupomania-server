@@ -78,7 +78,9 @@ const Card = ({ post }) => {
       data.append("postId", post._id); //ICI !!! je dois recup l'id du post
       if (textUpdate) data.append("message", textUpdate);
       if (file) data.append("file", file);
-      await dispatch(updatePost(data, post._id)).then(() => dispatch(getPosts));
+      await dispatch(updatePost(data, post._id)).then(() =>
+        dispatch(getPosts())
+      );
       // await dispatch(updatePost(data, post._id));
       // dispatch(updatePost(post._id, textUpdate, postPicture))
       console.log(

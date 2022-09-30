@@ -1,11 +1,13 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deletePost } from "../../actions/post.actions";
+import { getPosts, deletePost } from "../../actions/post.actions";
 
 const DeleteCard = (props) => {
   const dispatch = useDispatch();
 
-  const deleteQuote = () => dispatch(deletePost(props.id));
+  const deleteQuote = () =>
+    dispatch(deletePost(props.id)).then(() => dispatch(getPosts()));
+  // const deleteQuote = () => dispatch(deletePost(props.id))
 
   return (
     <div

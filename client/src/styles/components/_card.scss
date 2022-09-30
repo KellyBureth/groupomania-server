@@ -147,7 +147,7 @@
     .card-pic {
       width: 100%;
       border-radius: 6px;
-      margin-top: 12px;
+      margin: 12px 0 15px 0;
       box-shadow: 0 0 3px rgba(51, 51, 51, 0.342);
     }
     iframe {
@@ -456,4 +456,12 @@ translate: 0px 3px;
 
   }
 
+}
+
+.icon input {
+  opacity: 0;
+}
+
+.fa-image {
+  font-size: 25px;
 }

@@ -9,13 +9,15 @@ import UserPosts from "../components/Profil/UserPosts";
 
 const Profil = () => {
   const uid = useContext(UidContext);
-
+  console.log("uid", uid);
   return (
     <div className="profil-page">
+      {uid === "null" && console.log("wait uid")}
       {uid ? (
         <UpdateProfil />
       ) : (
         <div className="log-container">
+          {/* <Log /> */}
           <Log signin={true} signup={false} />
           <div className="img-container">
             <img

@@ -4,11 +4,25 @@
         display: none;
     }
     &:checked + div.chronologique {
-        display: initial;
+        display: initial;    
+        & label {
+            font-size: large;
+            & > i.fa-sort {
+                margin: 20px 0;
+                font-size: x-large;
+            }
+            }
     }
 
     & + div + div.antichronologique {
-display: initial;
+        display: initial;    
+        & label {
+            font-size: large;
+            & > i.fa-sort {
+                margin: 20px 0;
+                font-size: x-large;
+            }
+            }
     }
     &:checked + div + div.antichronologique {
         display: none;

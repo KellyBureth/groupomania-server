@@ -1,9 +1,9 @@
 .profil-page {
-  margin: 80px auto 0;
+  margin: 100px auto 0;
   max-width: 1200px;
 
   .icons {
-    top: 55px;
+    top: 70px;
   }
 
   .log-container {
@@ -130,6 +130,7 @@
   .update-container {
     display: grid;
     grid-template-columns: 50% 50%;
+    margin: 0 50px;
 
     @media screen and(max-width: 700px) {
       grid-template-columns: 1fr;
@@ -167,7 +168,7 @@
         label {
           position: absolute;
           transform: translate(-50%, -50%);
-          width: 270px;
+          width: 230px;
           background: $color-3;
           color: $color-2;
           border-radius: 20px;
@@ -180,7 +181,7 @@
         input[type="file"] {
           position: absolute;
           opacity: 1;
-          transform: translate(-3px, -50%);
+          transform: translate(-23px, -50%);
           cursor: pointer;
           padding: 10px 20px;
           font-weight: bold;
@@ -246,6 +247,12 @@
         }
       }
     }
+  }
+  .userPosts {
+    margin: 0 60px;
+  }
+  .titleAllPosts {
+    margin: 20px;
   }
   .popup-profil-container {
     z-index: 100;

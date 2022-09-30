@@ -14,17 +14,32 @@ import Trends from "../components/Trends";
 
 const Home = () => {
   const uid = useContext(UidContext);
-
+  console.log("uid", uid);
   return (
     <div>
+      {uid === "null" && console.log("wait uid null", uid)}
       {!uid ? (
-        <div className="log-container">
-          <Log signin={true} signup={false} />
-          <div className="img-container">
-            <img src="./img/logo_secondary.svg" alt="img-log" />
+        <div className="profil-page">
+          <div className="log-container">
+            {/* <Log /> */}
+            <Log signin={true} signup={false} />
+            <div className="img-container">
+              <img
+                src="./img/logo_brown.svg"
+                alt="img-log"
+                className="rotateImg"
+              />
+            </div>
           </div>
         </div>
       ) : (
+        // <div className="log-container">
+        //   <Log signin={true} signup={false} />
+        //   <div className="img-container">
+        //     <img src="./img/logo_secondary.svg" alt="img-log" />
+        //   </div>
+        //   {console.log("wait !uid ", uid)}
+        // </div>
         // <Navigate to="/profil" />
         <div className="home">
           <LeftNav />

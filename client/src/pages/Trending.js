@@ -30,14 +30,27 @@ const Trending = () => {
   return (
     <div>
       {!uid ? (
-        // <Navigate to="/profil" />
-        <div className="log-container">
-          <Log signin={true} signup={false} />
-          <div className="img-container">
-            <img src="./img/logo_secondary.svg" alt="img-log" />
+        <div className="profil-page">
+          <div className="log-container">
+            {/* <Log /> */}
+            <Log signin={true} signup={false} />
+            <div className="img-container">
+              <img
+                src="./img/logo_brown.svg"
+                alt="img-log"
+                className="rotateImg"
+              />
+            </div>
           </div>
         </div>
       ) : (
+        // <Navigate to="/profil" />
+        // <div className="log-container">
+        //   <Log signin={true} signup={false} />
+        //   <div className="img-container">
+        //     <img src="./img/logo_secondary.svg" alt="img-log" />
+        //   </div>
+        // </div>
         <div className="trending-page">
           <LeftNav />
           <div className="main">

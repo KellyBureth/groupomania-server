@@ -21,7 +21,7 @@ const UserPosts = () => {
   console.log("allpostid", allPosts.posterId);
   console.log("allpostid", allPosts.likers);
 
-  const userPosts = allPosts.filter((key) => key.posterId.includes(userId));
+  //   const userPosts = allPosts.filter((key) => key.posterId.includes(userId));
   // console.log("filteredArray", filteredArray);
   //   const userPosts = allPosts.filter((key) => key.likers.includes(userId));
   //   console.log("userPosts", userPosts);
@@ -30,20 +30,18 @@ const UserPosts = () => {
     // <div>
     //   {" "}
     <div>
+      {uid === "null" && console.log("wait uid")}
       {!uid ? (
-        <div className="log-container">
-          <Log signin={true} signup={false} />
-          <div className="img-container">
-            <img src="./img/logo_secondary.svg" alt="img-log" />
-          </div>
-        </div>
+        <div>{console.log("uid null")}</div>
       ) : (
-        <div>
+        <div className="userPosts">
           <h1 className="titleAllPosts">Tous les posts de {userData.pseudo}</h1>
           {!isEmpty(allPosts) &&
-            userPosts.map((userPosts) => {
-              return <Card post={userPosts} key={userPosts._id} />;
-            })}
+            allPosts
+              .filter((key) => key.posterId.includes(userId))
+              .map((userPosts) => {
+                return <Card post={userPosts} key={userPosts._id} />;
+              })}
         </div>
       )}
     </div>
