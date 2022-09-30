@@ -11,6 +11,8 @@ const Thread = () => {
   const posts = useSelector((state) => state.postReducer); //dispatch envoe, useSelector recupere !!!
   const allPosts = useSelector((state) => state.allPostsReducer); //dispatch envoe, useSelector recupere !!!
   // const allPostsReverse = allPosts.reverse();
+  console.log("allpost", allPosts);
+
   const loadMore = () => {
     if (
       window.innerHeight + document.documentElement.scrollTop + 1 >

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Routes from "./components/Routes";
-import { UidContext } from "./components/AppContext";
+// import { UidContext } from "./components/AppContext";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { getUser } from "./actions/user.actions";
 
-const App = () => {
+const IsLoggedIn = () => {
   const [uid, setUid] = useState(null);
   const dispatch = useDispatch();
 
@@ -27,12 +26,8 @@ const App = () => {
     if (uid) dispatch(getUser(uid)); //si uid existe, (uid etant la data recuperé dans setuid du fetchtoken) stocker les données dans le store
   }, [uid, dispatch]);
 
-  //si fechtoken est null indeifined : loader , sinon true ok ou false login
-  return (
-    <UidContext.Provider value={uid}>
-      <Routes />
-    </UidContext.Provider>
-  );
+  //si fechtoken est null indeifined : loader , sinon
+  return <div></div>;
 };
 
-export default App;
+export default IsLoggedIn;

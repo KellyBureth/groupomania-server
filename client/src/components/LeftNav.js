@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 const LeftNav = () => {
   const userData = useSelector((state) => state.userReducer);
 
+  const ADMIN = process.env.REACT_APP_API_ADMIN_ROLE;
+
   return (
     <div className="left-nav-container">
       <div className="icons">
@@ -36,7 +38,7 @@ const LeftNav = () => {
             <br />
             {/* <img src="./img/icons/user.svg" alt="home" /> */}
           </NavLink>
-          {userData.role === "833" && (
+          {userData.role === ADMIN && (
             <NavLink to="/dashboard" activeclassname="active-left-nav">
               <br />
               <i className="fa-solid fa-unlock"></i>

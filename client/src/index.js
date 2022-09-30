@@ -13,15 +13,16 @@ import { getPosts } from "./actions/post.actions";
 
 // dev tools
 import { composeWithDevTools } from "redux-devtools-extension";
-import IsLogged from "./components/Log/IsLogged";
+// import IsLogged from "./components/Log/IsLogged";
 
-if (IsLogged) {
-  console.log("jwt", IsLogged);
-} else {
-  console.log("nocookie");
-}
+// if (IsLogged) {
+//   console.log("jwt", IsLogged);
+// } else {
+//   console.log("nocookie");
+// }
 
-IsLogged("jwb");
+// IsLogged("jwb");
+
 // import cookie from "js-cookie";
 // const GetCookie = (cookieName) => {
 //   return Cookie.get(cookiename);

@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 import Log from "../components/Log";
 import { UidContext } from "../components/AppContext";
 import UpdateProfil from "../components/Profil/UpdateProfil";
+import UserPosts from "../components/Profil/UserPosts";
 // import UpdateProfil from "../components/Profil/UpdateProfil";
 
 const Profil = () => {
@@ -25,6 +26,7 @@ const Profil = () => {
           </div>
         </div>
       )}
+      <UserPosts />
     </div>
   );
 };

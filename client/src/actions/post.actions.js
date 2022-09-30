@@ -75,19 +75,54 @@ export const unlikePost = (postId, userId) => {
   };
 };
 
-export const updatePost = (postId, message) => {
+//essai a reprendre plus tard
+// export const updatePost = (postId, data) => {
+//   return (dispatch) => {
+//     return axios
+//       .put(`${process.env.REACT_APP_API_URL}api/post/${postId}`, data)
+//       .then((res) => {
+//         dispatch({ type: UPDATE_POST, payload: { postId, message, file } });
+//       })
+//       .catch((err) => console.log(err));
+//   };
+// };
+//picture iuser
+export const updatePost = (data, postId) => {
   return (dispatch) => {
-    return axios({
-      method: "put",
-      url: `${process.env.REACT_APP_API_URL}api/post/${postId}`,
-      data: { message },
-    })
+    return axios
+      .put(`${process.env.REACT_APP_API_URL}api/post/${postId}`, data) //remplace l'image en back, dans dossier img uploads profil
       .then((res) => {
-        dispatch({ type: UPDATE_POST, payload: { message, postId } });
+        if (res.data.errors) {
+          dispatch({ type: GET_POST_ERRORS, payload: res.data.errors });
+        } else {
+          dispatch({ type: GET_POST_ERRORS, payload: "" });
+          return axios
+            .get(`${process.env.REACT_APP_API_URL}api/post/${postId}`) //et met à jour le store
+            .then((res) => {
+              dispatch({ type: UPDATE_POST, payload: res.data.picture });
+              dispatch({ type: UPDATE_POST, payload: res.data.message });
+              // dispatch({ type: UPDATE_POST, payload: { data, postId } });
+            });
+        }
       })
       .catch((err) => console.log(err));
   };
 };
+
+//avt essai data, focnctione tout sauf le file ds le dossier
+// export const updatePost = (postId, message, file) => {
+//   return (dispatch) => {
+//     return axios({
+//       method: "put",
+//       url: `${process.env.REACT_APP_API_URL}api/post/${postId}`,
+//       data: { message, file },
+//     })
+//       .then((res) => {
+//         dispatch({ type: UPDATE_POST, payload: { postId, message, file } });
+//       })
+//       .catch((err) => console.log(err));
+//   };
+// };
 
 export const deletePost = (postId) => {
   return (dispatch) => {
@@ -99,6 +134,12 @@ export const deletePost = (postId) => {
         dispatch({ type: DELETE_POST, payload: { postId } });
       })
       .catch((err) => console.log(err));
+  };
+};
+
+export const getTrends = (sortedArray) => {
+  return (dispatch) => {
+    dispatch({ type: GET_TRENDS, payload: sortedArray });
   };
 };
 
@@ -143,9 +184,3 @@ export const deletePost = (postId) => {
 //       .catch((err) => console.log(err));
 //   };
 // };
-
-export const getTrends = (sortedArray) => {
-  return (dispatch) => {
-    dispatch({ type: GET_TRENDS, payload: sortedArray });
-  };
-};
