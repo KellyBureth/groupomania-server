@@ -18,7 +18,7 @@
  
  
  ## Outils utilisés :
- Javascript, React, MongoDB.
+ NodeJs, React, MongoDB.
  
  
  ## Installation :
