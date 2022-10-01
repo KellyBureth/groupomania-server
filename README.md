@@ -1,7 +1,11 @@
 # Groupomania!
 
+<p g align="center">
+<img src="https://user-images.githubusercontent.com/96128478/193409891-dcd75c15-8fdc-41e0-9869-ab82786b7105.svg" width="100"> <img src="https://user-images.githubusercontent.com/96128478/193410065-a6df5bbe-7b60-4294-9f70-e6cfef3edc5b.svg" width="500">
+ </p>
 
 ## Introduction :
+
 
  Bienvenue sur mon dépôt Groupomania !
  
