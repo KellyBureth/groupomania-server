@@ -8,6 +8,7 @@
  Bienvenue sur mon dépôt Groupomania !
  
  Le projet Groupomania a été réalisé dans le cadre de la formation OpenClassRoom "parcours développeur web".
+ 
  Pour ce septième et dernier projet du parcours, nous avions à réaliser un réseau social interne pour les employés de la société Groupomania (côté server et côté client).
  
  Vous trouverez la mission du projet dans ce document pdf :
