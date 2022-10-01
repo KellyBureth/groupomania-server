@@ -6,8 +6,9 @@
  Bienvenue sur mon dépôt Groupomania !
  
  Le projet Groupomania a été réalisé dans le cadre de la formation OpenClassRoom "parcours développeur web".
- Pour ce septième et dernier projet du parcours, nous avions à réaliser un réseau social (côté server et côté client),
- vous trouverez le pdf de la mission ici :
+ Pour ce septième et dernier projet du parcours, nous avions à réaliser un réseau social interne pour les employés de Groupomania (côté server et côté client).
+ 
+ Vous trouverez le pdf de la mission ici :
  https://course.oc-static.com/projects/DWJ_FR_P7/DW+P7+28-09-2022+Sce%CC%81nario.pdf
  
  Quant au cahier des charge, vous le trouverez dans cet autre pdf :
@@ -19,7 +20,8 @@
  
  
  ## INSTALLATION :
- Clonez le projet puis ouvrez un premier terminal pour backend :
+ Clonez le projet puis ouvrez un premier terminal pour **backend** :
+ 
  Dans le repertoire Groupomania, entrez la ligne : 
  >npm install
  
@@ -30,7 +32,7 @@
  pour executer le serveur (qui sera sur le port 5000)
  Gardez ce terminal ouvert.
  
- A présent ourez un second terminal pour le côté frontend :
+ A présent ourez un second terminal pour le **frontend** :
  Dans le repertoire Groupomania, entrez la ligne : 
  >cd client
  
