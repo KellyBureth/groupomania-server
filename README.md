@@ -1,7 +1,7 @@
 # Groupomania!
 
 
-## INTRODUCTION :
+## Introduction :
 
  Bienvenue sur mon dépôt Groupomania !
  
@@ -15,11 +15,11 @@
  https://course.oc-static.com/projects/DWJ_FR_P7/Cahier+des+charges+Groupomania.pdf
  
  
- ## LANGUAGES, BASE DE DONNEES ET FRAMEWORKS UTILISES :
+ ## Outils utilisés :
  Javascript, React, MongoDB.
  
  
- ## INSTALLATION :
+ ## Installation :
  Clonez le projet puis ouvrez un premier terminal pour le **backend** :
  
  Dans le repertoire Groupomania, entrez la ligne : 
@@ -30,13 +30,14 @@
  >nodemon server
  
  pour executer le serveur (qui sera sur le port 5000)
- *Gardez ce terminal ouvert.*
+
+*Gardez ce terminal ouvert.*
  
  A présent ourez un second terminal pour le **frontend** :
  Dans le repertoire Groupomania, entrez la ligne : 
  >cd client
  
- pour vous placer dans le repertoire du frontend,
+ pour vous placer dans le repertoire du frontend, puis
  >npm install
  
  pour installer toutes les dépendences du front,
@@ -44,9 +45,10 @@
   >npm start
 
  pour executer l'application (qui sera sur le port 3000)
+ 
  *Gardez ce terminal ouvert.*
  
- Tout est bon ! 
+ ## Tout est bon ! 
  Vous pouvez dès à présent vous rendre à l'adresse "http://localhost:3000" 
  pour vous créer un compte Groupomania, créer des posts et les modifier !
  Amusez-vous bien !
