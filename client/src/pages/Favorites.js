@@ -5,6 +5,7 @@ import LeftNav from "../components/LeftNav";
 import Card from "../components/Post/Card";
 import Log from "../components/Log";
 import { isEmpty } from "../components/Utils";
+import GoUp from "../components/GoUp";
 
 const Favorites = () => {
   const uid = useContext(UidContext);
@@ -20,7 +21,7 @@ const Favorites = () => {
   console.log("allpostid", allPosts.likers);
 
   return (
-    <div>
+    <div id="top">
       {uid === "null" && console.log("wait uid")}
       {!uid ? (
         <div className="profil-page">
@@ -46,6 +47,7 @@ const Favorites = () => {
         // </div>
         <div className="favorites-page">
           <LeftNav />
+          <GoUp />
           <div className="main">
             <h1 className="title_favorites">Vos posts préférés</h1>
             <ul>

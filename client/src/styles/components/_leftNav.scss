@@ -4,15 +4,26 @@
 
   .icons {
     position: fixed;
-    z-index: 10;
+    z-index: 11;
 
     @media screen and(max-width: 590px) {
       margin: 2px 0 0 -9px;
+      width: 100%;
     }
-
+    
     .icons-bis {
       position: absolute;
       left: 10px;
+      @media screen and(max-width: 590px) {
+        display: flex;
+    justify-content: space-evenly;
+    // width: 100%;
+    padding: 0px 20px 20px 20px;
+    background-color: $white;
+    /* margin-bottom: 20px; */
+    position: relative;
+    top: -20px;
+      }
 
       a {
         transition: 0.1s;

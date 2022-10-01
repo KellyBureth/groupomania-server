@@ -5,6 +5,7 @@ import Log from "../components/Log";
 import { UidContext } from "../components/AppContext";
 import UpdateProfil from "../components/Profil/UpdateProfil";
 import UserPosts from "../components/Profil/UserPosts";
+import GoUp from "../components/GoUp";
 // import UpdateProfil from "../components/Profil/UpdateProfil";
 
 const Profil = () => {
@@ -14,7 +15,11 @@ const Profil = () => {
     <div className="profil-page">
       {uid === "null" && console.log("wait uid")}
       {uid ? (
-        <UpdateProfil />
+        <div id="top">
+          <UpdateProfil />
+          <UserPosts />
+          <GoUp />
+        </div>
       ) : (
         <div className="log-container">
           {/* <Log /> */}
@@ -28,7 +33,6 @@ const Profil = () => {
           </div>
         </div>
       )}
-      <UserPosts />
     </div>
   );
 };

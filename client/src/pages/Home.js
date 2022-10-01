@@ -7,6 +7,7 @@ import NewPostForm from "../components/Post/NewPostForm";
 import Thread from "../components/Thread";
 import Log from "../components/Log";
 import Trends from "../components/Trends";
+import GoUp from "../components/GoUp";
 // import FavoritesOverview from "../components/FavoritesOverview";
 // import Log from "../components/Log";
 // import Trends from "../components/Trends";
@@ -16,7 +17,7 @@ const Home = () => {
   const uid = useContext(UidContext);
   console.log("uid", uid);
   return (
-    <div>
+    <div id="top">
       {uid === "null" && console.log("wait uid null", uid)}
       {!uid ? (
         <div className="profil-page">
@@ -51,6 +52,7 @@ const Home = () => {
               <NewPostForm />
             </div>
             <Thread />
+            <GoUp />
           </div>
           <div className="right-side">
             <div className="right-side-container">

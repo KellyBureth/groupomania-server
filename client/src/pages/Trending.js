@@ -8,6 +8,7 @@ import Card from "../components/Post/Card";
 import Log from "../components/Log";
 import { getTrends } from "../actions/post.actions";
 import { isEmpty } from "../components/Utils";
+import GoUp from "../components/GoUp";
 // import { NavLink } from "react-router-dom";
 
 const Trending = () => {
@@ -28,7 +29,7 @@ const Trending = () => {
     }
   }, [posts, dispatch]);
   return (
-    <div>
+    <div id="top">
       {!uid ? (
         <div className="profil-page">
           <div className="log-container">
@@ -53,6 +54,7 @@ const Trending = () => {
         // </div>
         <div className="trending-page">
           <LeftNav />
+          <GoUp />
           <div className="main">
             <h1 className="title_trending">En tendance</h1>
             <ul>

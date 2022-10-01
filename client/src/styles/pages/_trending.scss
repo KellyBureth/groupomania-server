@@ -1,25 +1,45 @@
+.door {
+  @media screen and(max-width: 590px) {
+  padding-right: 30px;
+  }
+}
 .trending-page, .favorites-page {
   // max-width: 1200px;
   // margin: 62px auto 0;
   margin: 100px 0;
-  padding: 0 150px;
+  padding: 0 200px;
   // display: grid;
   // grid-template-columns: 60px 1fr 374px;
 
   @media screen and(max-width: 990px) {
     grid-template-columns: 60px 1fr;
-    margin: 58px 20px 50px
+    // margin: 58px 20px 50px
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 70px;
+    padding-bottom: 70px;
   }
 
   @media screen and(max-width: 590px) {
     grid-template-columns: 1fr;
-    margin: 58px 8px 50px;
+    // margin: 58px 8px 50px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 70px;
+    padding-bottom: 70px;
   }
-
+  
   .main {
     // margin-top: -8px;
     margin: 10px 100px;
     // width: 100%;
+    @media screen and(max-width: 590px) {
+      position: relative;
+    margin: 10px;
+    top: 60px;
+    }
   }
 
   .title_trending, .title_favorites {
@@ -40,6 +60,14 @@
         width: 404px;
       }
   
+    }
+  }
+  .icons {
+    margin-left: 40px;
+    & .icons-bis {
+      @media screen and(max-width: 590px) {
+        left: -50px;
+      }
     }
   }
 } 

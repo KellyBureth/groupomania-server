@@ -11,6 +11,10 @@
     font-size: 1.5rem;
     margin: 20px 0;
     color: $color-3;
+    @media screen and(max-width: 420px) {
+    position: relative;
+    bottom: 10px;
+    }
   }
 
   .data {
