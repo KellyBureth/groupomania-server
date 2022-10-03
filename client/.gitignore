@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # images uploaded by users
-/public/uploads
+# /public/uploads
 
 # secret admin code
 /.env
