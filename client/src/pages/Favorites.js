@@ -9,11 +9,8 @@ import GoUp from "../components/GoUp";
 
 const Favorites = () => {
   const uid = useContext(UidContext);
-
   const userData = useSelector((state) => state.userReducer);
-
-  const posts = useSelector((state) => state.postReducer); //dispatch envoe, useSelector recupere !!!
-  const allPosts = useSelector((state) => state.allPostsReducer); //dispatch envoe, useSelector recupere !!!
+  const allPosts = useSelector((state) => state.allPostsReducer);
   console.log("allpost", allPosts);
   const userId = userData._id;
   console.log("userid", userId);
@@ -26,7 +23,6 @@ const Favorites = () => {
       {!uid ? (
         <div className="profil-page">
           <div className="log-container">
-            {/* <Log /> */}
             <Log signin={true} signup={false} />
             <div className="img-container">
               <img
@@ -38,25 +34,12 @@ const Favorites = () => {
           </div>
         </div>
       ) : (
-        // // <Navigate to="/profil" />
-        // <div className="log-container">
-        //   <Log signin={true} signup={false} />
-        //   <div className="img-container">
-        //     <img src="./img/logo_secondary.svg" alt="img-log" />
-        //   </div>
-        // </div>
         <div className="favorites-page">
           <LeftNav />
           <GoUp />
           <div className="main">
             <h1 className="title_favorites">Vos posts préférés</h1>
             <ul>
-              {/* {!isEmpty(allPosts) &&
-                favoritesPosts.map((favoritesPosts) => {
-                  return (
-                    <Card post={favoritesPosts} key={favoritesPosts._id} />
-                  );
-                })} */}
               {!isEmpty(allPosts[0]) &&
                 allPosts
                   .filter((key) => key.likers.includes(userId))

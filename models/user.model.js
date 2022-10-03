@@ -6,7 +6,6 @@ const userSchema = new mongoose.Schema(
   {
     pseudo: {
       type: String,
-      // required: true,
       minLength: 3,
       maxLength: 55,
       unique: true,
@@ -34,12 +33,6 @@ const userSchema = new mongoose.Schema(
       type: String,
       max: 1024,
     },
-    followers: {
-      type: [String],
-    },
-    following: {
-      type: [String],
-    },
     likes: {
       type: [String],
     },
@@ -54,9 +47,7 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-// play function before save into display: 'block',
 userSchema.pre("save", async function (next) {
-  //pas de fonction fléchée sinon le .this ne fonctionnerait pas
   const salt = await bcrypt.genSalt();
   this.password = await bcrypt.hash(this.password, salt);
   next();

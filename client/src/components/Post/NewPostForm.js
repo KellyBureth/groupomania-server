@@ -8,7 +8,6 @@ const NewPostForm = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [message, setMessage] = useState("");
   const [postPicture, setPostPicture] = useState(null);
-  //   const [video, setVideo] = useState("");
   const [file, setFile] = useState();
   const userData = useSelector((state) => state.userReducer);
   const error = useSelector((state) => state.errorReducer.postError);
@@ -20,7 +19,6 @@ const NewPostForm = () => {
       data.append("posterId", userData._id);
       data.append("message", message);
       if (file) data.append("file", file);
-      //   data.append('video', video);
 
       await dispatch(addPost(data));
       dispatch(getPosts());
@@ -33,13 +31,11 @@ const NewPostForm = () => {
   const handlePicture = (e) => {
     setPostPicture(URL.createObjectURL(e.target.files[0]));
     setFile(e.target.files[0]);
-    // setVideo('');
   };
 
   const cancelPost = () => {
     setMessage("");
     setPostPicture("");
-    // setVideo("");
     setFile("");
   };
 
@@ -47,45 +43,12 @@ const NewPostForm = () => {
     if (!isEmpty(userData)) setIsLoading(false);
   }, [userData, message]);
 
-  //   useEffect(() => {
-  //     if (!isEmpty(userData)) setIsLoading(false);
-
-  //     const handleVideo = () => {
-  //       let findLink = message.split(" ");
-  //       for (let i = 0; i < findLink.length; i++) {
-  //         if (
-  //           findLink[i].includes("https://www.yout") ||
-  //           findLink[i].includes("https://yout")
-  //         ) {
-  //           let embed = findLink[i].replace("watch?v=", "embed/");
-  //           setVideo(embed.split("&")[0]);
-  //           findLink.splice(i, 1);
-  //           setMessage(findLink.join(" "));
-  //           setPostPicture('');
-  //         }
-  //       }
-  //     };
-  //     handleVideo();
-  //   }, [userData, message, video]);
-
   return (
     <div className="post-container">
       {isLoading ? (
         <i className="fas fa-spinner fa-pulse"></i>
       ) : (
         <>
-          {/* <div className="data">
-            <p>
-              <span>{userData.following ? userData.following.length : 0}</span>{" "}
-              Abonnement
-              {userData.following && userData.following.length > 1 ? "s" : null}
-            </p>
-            <p>
-              <span>{userData.followers ? userData.followers.length : 0}</span>{" "}
-              Abonné
-              {userData.followers && userData.followers.length > 1 ? "s" : null}
-            </p> 
-          </div> */}
           <div className="user-info">
             <NavLink to="/profil">
               <img src={userData.picture} alt="user-img" />
@@ -114,15 +77,6 @@ const NewPostForm = () => {
                   <div className="content">
                     <p>{message}</p>
                     <img src={postPicture} alt="" />
-                    {/* {video && (
-                      <iframe
-                        src={video}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        title={video}
-                      ></iframe>
-                    )} */}
                   </div>
                 </div>
               </li>
@@ -141,10 +95,6 @@ const NewPostForm = () => {
                     onChange={(e) => handlePicture(e)}
                   />
                 </>
-
-                {/* {video && (
-                  <button onClick={() => setVideo("")}>Supprimer video</button>
-                )} */}
               </div>
               {/* si le store des erreurs récupérées du back n'est pas vide (donc si le back renvoie une erreur) ecrire cette erreur dans le front */}
               {!isEmpty(error.format) && <p>{error.format}</p>}

@@ -6,12 +6,10 @@ import { isEmpty } from "./Utils";
 
 const Thread = () => {
   const [loadPost, setLoadPost] = useState(true); //chargement de l'ensemble des posts, de base sur true car on veut charger les posts quand on appelle le componants thread
-  const [count, setCount] = useState(5); //5 posts de base
+  const [count, setCount] = useState(5);
   const dispatch = useDispatch();
-  const posts = useSelector((state) => state.postReducer); //dispatch envoe, useSelector recupere !!!
-  const allPosts = useSelector((state) => state.allPostsReducer); //dispatch envoe, useSelector recupere !!!
-  // const allPostsReverse = allPosts.reverse();
-  console.log("allpost", allPosts);
+  const posts = useSelector((state) => state.postReducer);
+  const allPosts = useSelector((state) => state.allPostsReducer);
 
   const loadMore = () => {
     if (
@@ -30,27 +28,14 @@ const Thread = () => {
       setCount(count + 5); //ajoute 5 posts
     }
 
-    window.addEventListener("scroll", loadMore); //a chaque scroll, analyse loadMore pour savoir ou on se trouve sur la page, t lancer la fonction loadmore qui ajoutera 5 posts si on est en bas de page
+    window.addEventListener("scroll", loadMore); //à chaque scroll, analyse loadMore pour savoir ou on se trouve sur la page, et lancer la fonction loadmore qui ajoutera 5 posts si on est en bas de page
     return () => window.removeEventListener("scroll", loadMore); //puis stoppe l'ecoute une fois qu'on n'est plus en bas de la page
   }, [loadPost, dispatch, count]);
 
-  // const allPosts =
-  //   !isEmpty(posts[0]) &&
-  //   posts.map((post) => {
-  //     return <Card post={post} key={post._id} />;
-  //   });
-  // const allPostsReverse =
-  //   !isEmpty(posts[0]) &&
-  //   posts.map((post) => {
-  //     return <Card post={post} key={post._id} />;
-  //   });
-
-  // document.getElementById('admin_postsOrder').checked = true;
   return (
     <div className="thread-container">
       {" "}
       <ul>
-        {/* si post dans store n'est pas vide, alors on liste les post */}
         <input
           type="checkbox"
           defaultChecked={true}

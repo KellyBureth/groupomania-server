@@ -1,5 +1,4 @@
 import React from "react";
-import LeftNav from "../components/LeftNav";
 
 const Conditions = () => {
   return (

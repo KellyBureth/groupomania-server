@@ -6,7 +6,6 @@ import { UidContext } from "../components/AppContext";
 import UpdateProfil from "../components/Profil/UpdateProfil";
 import UserPosts from "../components/Profil/UserPosts";
 import GoUp from "../components/GoUp";
-// import UpdateProfil from "../components/Profil/UpdateProfil";
 
 const Profil = () => {
   const uid = useContext(UidContext);
@@ -22,7 +21,6 @@ const Profil = () => {
         </div>
       ) : (
         <div className="log-container">
-          {/* <Log /> */}
           <Log signin={true} signup={false} />
           <div className="img-container">
             <img

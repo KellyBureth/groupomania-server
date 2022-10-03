@@ -65,13 +65,11 @@ nav {
         transform: translate(15px, 2px);
         font-size: 1.5rem;
         color: $color-3;
-        // color: $red;
       }
       img {
         height: 26px;
         width: 26px;
         position: relative;
-        // bottom: 2px;
       }
     }
     
@@ -102,7 +100,6 @@ nav {
           }
 
           & img {
-            // border: 1px $color-1 dotted;
             scale: 1.8;
             margin-left: 10px;
             border-radius: 8px;
@@ -119,7 +116,6 @@ nav {
           display: grid;
           align-items: center;
           justify-items: center;
-          // height: 100%;
         }
       }
     }

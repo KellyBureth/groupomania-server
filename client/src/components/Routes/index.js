@@ -6,7 +6,6 @@ import Favorites from "../../pages/Favorites";
 import Home from "../../pages/Home";
 import Profil from "../../pages/Profil";
 import Trending from "../../pages/Trending";
-// import AuthGuard from "../Log/AuthGuard";
 import Navbar from "../Navbar";
 
 const index = () => {
@@ -14,7 +13,6 @@ const index = () => {
     <div>
       <BrowserRouter>
         <Navbar />
-        {/* <AuthGuard /> */}
         <Routes>
           <Route path="/*" element={<Home />} />
           <Route path="/profil" element={<Profil />} />

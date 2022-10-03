@@ -1,12 +1,11 @@
 import {
-  // FOLLOW_USER,
   GET_USER,
-  // UNFOLLOW_USER,
   UPDATE_BIO,
   UPLOAD_PICTURE,
+  DELETE_USER,
 } from "../actions/user.actions";
 
-const initialState = {}; //state initial, vide
+const initialState = {};
 
 export default function userReducer(state = initialState, action) {
   switch (action.type) {
@@ -22,18 +21,9 @@ export default function userReducer(state = initialState, action) {
         ...state,
         bio: action.payload,
       };
-    //   case FOLLOW_USER:
-    //     return {
-    //       ...state,
-    //       following: [action.payload.idToFollow, ...state.following],
-    //     };
-    //   case UNFOLLOW_USER:
-    //     return {
-    //       ...state,
-    //       following: state.following.filter(
-    //         (id) => id !== action.payload.idToUnfollow
-    //       ),
-    //     };
+    case DELETE_USER:
+      return state.filter((user) => user._id !== action.payload.userId); //retourne tous les posts sauf celui avec l'id du post supprimé
+
     default:
       return state;
   }

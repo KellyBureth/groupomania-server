@@ -15,7 +15,6 @@
     margin: 15px;
     position: fixed;
     top: initial;
-    //right: initial;
     bottom: 30px;
     right: 550px;
     z-index: 11;
@@ -28,10 +27,6 @@
 }
 
 .profil-page .top {
-    // position: fixed;
-    // top: 110px;
-    // right: 260px;
-    // font-size: xx-large;
     @media screen and(max-width: 590px) {
         top: initial;
         bottom: 5px;

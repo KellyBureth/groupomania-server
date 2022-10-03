@@ -9,11 +9,6 @@ export const UNLIKE_POST = "UNLIKE_POST";
 export const UPDATE_POST = "UPDATE_POST";
 export const DELETE_POST = "DELETE_POST";
 
-// // comments
-// export const ADD_COMMENT = "ADD_COMMENT";
-// export const EDIT_COMMENT = "EDIT_COMMENT";
-// export const DELETE_COMMENT = "DELETE_COMMENT";
-
 // trends
 export const GET_TRENDS = "GET_TRENDS";
 
@@ -75,17 +70,6 @@ export const unlikePost = (postId, userId) => {
   };
 };
 
-//essai a reprendre plus tard
-// export const updatePost = (postId, data) => {
-//   return (dispatch) => {
-//     return axios
-//       .put(`${process.env.REACT_APP_API_URL}api/post/${postId}`, data)
-//       .then((res) => {
-//         dispatch({ type: UPDATE_POST, payload: { postId, message, file } });
-//       })
-//       .catch((err) => console.log(err));
-//   };
-// };
 //picture iuser
 export const updatePost = (data, postId) => {
   return (dispatch) => {
@@ -101,28 +85,12 @@ export const updatePost = (data, postId) => {
             .then((res) => {
               dispatch({ type: UPDATE_POST, payload: res.data.picture });
               dispatch({ type: UPDATE_POST, payload: res.data.message });
-              // dispatch({ type: UPDATE_POST, payload: { data, postId } });
             });
         }
       })
       .catch((err) => console.log(err));
   };
 };
-
-//avt essai data, focnctione tout sauf le file ds le dossier
-// export const updatePost = (postId, message, file) => {
-//   return (dispatch) => {
-//     return axios({
-//       method: "put",
-//       url: `${process.env.REACT_APP_API_URL}api/post/${postId}`,
-//       data: { message, file },
-//     })
-//       .then((res) => {
-//         dispatch({ type: UPDATE_POST, payload: { postId, message, file } });
-//       })
-//       .catch((err) => console.log(err));
-//   };
-// };
 
 export const deletePost = (postId) => {
   return (dispatch) => {
@@ -142,45 +110,3 @@ export const getTrends = (sortedArray) => {
     dispatch({ type: GET_TRENDS, payload: sortedArray });
   };
 };
-
-// export const addComment = (postId, commenterId, text, commenterPseudo) => {
-//   return (dispatch) => {
-//     return axios({
-//       method: "patch",
-//       url: `${process.env.REACT_APP_API_URL}api/post/comment-post/${postId}`,
-//       data: { commenterId, text, commenterPseudo },
-//     })
-//       .then((res) => {
-//         dispatch({ type: ADD_COMMENT, payload: { postId } });
-//       })
-//       .catch((err) => console.log(err));
-//   };
-// };
-
-// export const editComment = (postId, commentId, text) => {
-//   return (dispatch) => {
-//     return axios({
-//       method: "patch",
-//       url: `${process.env.REACT_APP_API_URL}api/post/edit-comment-post/${postId}`,
-//       data: { commentId, text },
-//     })
-//       .then((res) => {
-//         dispatch({ type: EDIT_COMMENT, payload: { postId, commentId, text } });
-//       })
-//       .catch((err) => console.log(err));
-//   };
-// };
-
-// export const deleteComment = (postId, commentId) => {
-//   return (dispatch) => {
-//     return axios({
-//       method: "patch",
-//       url: `${process.env.REACT_APP_API_URL}api/post/delete-comment-post/${postId}`,
-//       data: { commentId },
-//     })
-//       .then((res) => {
-//         dispatch({ type: DELETE_COMMENT, payload: { postId, commentId } });
-//       })
-//       .catch((err) => console.log(err));
-//   };
-// };

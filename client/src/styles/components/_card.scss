@@ -6,7 +6,6 @@
   margin: 0 0 15px 0;
   padding: 16px;
   border-radius: 20px;
-  // margin: 15px auto;
   position: relative;
   min-height: 100px;
   
@@ -185,8 +184,6 @@
           height: 20px;
           width: 20px;
           transform: translateY(3px);
-          // scale: 1.2 1.1;
-          // translate: 1px -2px;
         }
       }
     }
@@ -408,10 +405,7 @@
     .button-container {
       text-align: right;
 
-      // & > div > img{
-      //   scale: 1.2 1.1;
-      //   translate: 1px -2px;
-      // }
+
 
       button {
         margin: 0;
@@ -437,17 +431,13 @@
   &:hover {
     & > .delete_text, > .edit_text {
       display: initial;
-    // scale: 1,1;
     }
   }
 
   &_text {
   display: none;
-  // background: none;
-  // scale: 0, 1;
 }
 &_icon {
-    // background: none;
     padding: 10px;
   } 
 
@@ -465,4 +455,8 @@ translate: 0px 3px;
 
 .fa-image {
   font-size: 25px;
+}
+
+.none {
+  display: none;
 }

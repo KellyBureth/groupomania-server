@@ -7,7 +7,6 @@ const DeleteCard = (props) => {
 
   const deleteQuote = () =>
     dispatch(deletePost(props.id)).then(() => dispatch(getPosts()));
-  // const deleteQuote = () => dispatch(deletePost(props.id))
 
   return (
     <div
@@ -18,12 +17,10 @@ const DeleteCard = (props) => {
         }
       }}
     >
-      {/* <div className="delete_button"> */}
       <div className="delete_text">Supprimer le post ? </div>
       <div className="delete_icon">
         <i className="fa-solid fa-comment-slash i_post_delete"></i>
       </div>{" "}
-      {/* </div> */}
     </div>
   );
 };

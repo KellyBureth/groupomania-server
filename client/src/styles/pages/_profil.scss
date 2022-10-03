@@ -9,7 +9,6 @@
   max-width: 1200px;
   @media screen and(max-width: 590px) {
     grid-template-columns: 1fr;
-    // margin: 58px 8px 50px;
     margin: 0;
     padding: 0;
     position: relative;
@@ -67,15 +66,9 @@
         }
         .active-btn {
           display: none;
-          // background: $color-1;
-
-          // &:hover {
-          //   background: $color-2;
-          // }
         }
         li:not(.active-btn) {
           &:hover {
-            // transform: translateX(3px);
             background: $color-2;
 
           }

@@ -9,12 +9,12 @@ const UploadImg = () => {
 
   const handlePicture = (e) => {
     e.preventDefault();
-    const data = new FormData(); //objet js pour mettre dans un package l'image plus des infos au back
+    const data = new FormData();
     data.append("name", userData.pseudo);
     data.append("userId", userData._id);
     data.append("file", file);
 
-    dispatch(uploadPicture(data, userData._id)); //pour le back, fonction dans user.actions
+    dispatch(uploadPicture(data, userData._id));
   };
 
   return (
@@ -24,7 +24,7 @@ const UploadImg = () => {
         type="file"
         id="file"
         name="file"
-        accept=".jpg, .jpeg, .png" //pour que quand l'user ouvre l'explorateur pour editer son image, ça filtre les png, jpeg et jpg
+        accept=".jpg, .jpeg, .png"
         onChange={(e) => setFile(e.target.files[0])}
       />
       <br />

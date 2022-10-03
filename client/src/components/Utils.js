@@ -33,7 +33,7 @@ export const timestampParser = (num) => {
 };
 
 export const isEmpty = (value) => {
-  //fonction qui va verifier si qqch est vide, pour la fonctionnalité de following/followers et le thread scroll
+  //fonction qui va verifier si qqch est vide
   return (
     value === undefined ||
     value === null ||

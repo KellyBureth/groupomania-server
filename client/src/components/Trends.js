@@ -12,11 +12,11 @@ const Trends = () => {
 
   useEffect(() => {
     if (!isEmpty(posts[0])) {
-      const postsArr = Object.keys(posts).map((i) => posts[i]); //pour faire un sort sur le  nb e like
+      const postsArr = Object.keys(posts).map((i) => posts[i]);
       let sortedArray = postsArr.sort((a, b) => {
         return b.likers.length - a.likers.length;
       });
-      sortedArray.length = 4; //on ne prend que les 3 posts les plus aimés
+      sortedArray.length = 4;
       dispatch(getTrends(sortedArray));
     }
   }, [posts, dispatch]);
@@ -31,17 +31,6 @@ const Trends = () => {
               return (
                 <li key={post._id}>
                   <div>
-                    {/* {post.picture && <img src={post.picture} alt="post-pic" />}
-                    {post.video && (
-                      <iframe
-                        src={post.video}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        title={post._id}
-                      ></iframe>
-                    )} */}
-                    {/* {isEmpty(post.picture) && isEmpty(post.video) && ( */}
                     <img
                       src={
                         usersData[0] &&
@@ -55,7 +44,6 @@ const Trends = () => {
                       }
                       alt="profil-pic"
                     />
-                    {/* )} */}
                   </div>
                   <div className="trend-content">
                     <p>{post.message}</p>

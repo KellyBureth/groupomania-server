@@ -15,15 +15,12 @@ const LeftNav = () => {
             <br />
             <i className="fas fa-house"></i>
             <br />
-            {/* <img src="./img/icons/home.svg" alt="home" /> */}
           </NavLink>
           <br />
           <NavLink to="/trending" activeclassname="active-left-nav">
             <br />
             <i className="fas fa-square-poll-vertical"></i>
-            {/* <i class="fa-solid fa-crown"></i> */}
             <br />
-            {/* <img src="./img/icons/rocket.svg" alt="home" /> */}
           </NavLink>
           <br />
           <NavLink to="/favorites" activeclassname="active-left-nav">
@@ -36,14 +33,12 @@ const LeftNav = () => {
             <br />
             <i className="fa-solid fa-house-user"></i>
             <br />
-            {/* <img src="./img/icons/user.svg" alt="home" /> */}
           </NavLink>
           {userData.role === ADMIN && (
             <NavLink to="/dashboard" activeclassname="active-left-nav">
               <br />
               <i className="fa-solid fa-unlock"></i>
               <br />
-              {/* <img src="./img/icons/user.svg" alt="home" /> */}
             </NavLink>
           )}
         </div>

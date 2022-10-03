@@ -9,8 +9,6 @@ module.exports.checkUser = (req, res, next) => {
       //on le decode
       if (err) {
         res.locals.user = null;
-        // res.redirect("/profil");
-        // res.cookie("jwt", "", { maxAge: 1 });
         next();
       } else {
         let user = await UserModel.findById(decodedToken.id);
@@ -19,11 +17,8 @@ module.exports.checkUser = (req, res, next) => {
         next();
       }
     });
-  }
-  // else if (!token) {res.redirect("/profil");}
-  else {
+  } else {
     res.locals.user = null;
-    // res.redirect("/profil");
     next();
   }
 };
@@ -34,7 +29,6 @@ module.exports.requireAuth = (req, res, next) => {
     jwt.verify(token, process.env.TOKEN_SECRET, async (err, decodedToken) => {
       if (err) {
         console.log(err);
-        // res.redirect("/profil");
         res.send(200).json("no token"); //si pas de token pas de next
       } else {
         console.log(decodedToken.id);
@@ -43,6 +37,5 @@ module.exports.requireAuth = (req, res, next) => {
     });
   } else {
     console.log("No token");
-    // res.redirect("/profil");
   }
 };
