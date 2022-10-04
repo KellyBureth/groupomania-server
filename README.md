@@ -18,8 +18,15 @@
  https://course.oc-static.com/projects/DWJ_FR_P7/Cahier+des+charges+Groupomania.pdf
  
  
- ## Outils utilisés :
- NodeJs, React, MongoDB.
+ ## Technologies utilisées :
+ NodeJs, React, MongoDB, Sass.
+ 
+ 
+ ## Dépendences installées :
+ ### Backend :
+ Bcrypt, cookie-parser, cors, dotenv, express, jsonwebtoken, mongoose, multer, nodemon et validator.
+ ### Frontend :
+ Axios, dotenv, js-cookie, node-sass, react, react-dom, react-redux, react-router-dom, react-scripts, redux, redux-devtools-extension, redux-thunk et web-vitals.
  
  
  ## Installation :
