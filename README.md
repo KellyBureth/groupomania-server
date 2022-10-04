@@ -59,7 +59,7 @@
  
  *Gardez ce terminal ouvert.*
  
- Les modèles de mes deux fichiers .env sont disponibles, il vous faudra y entrer votre propre clé token et vos coordonées MongoDB pour le .env du back et le nom du rôle admin que vous aurez choisi pour le .env du front.
+ Les modèles de mes deux fichiers .env sont disponibles, il vous faudra y entrer votre propre clé token et vos coordonées MongoDB pour le .env du back et le nom du rôle admin que vous aurez choisi pour le .env du front (et renommer ces deux fichiers .env.example par .env)
  
  
  ## Tout est bon ! 
