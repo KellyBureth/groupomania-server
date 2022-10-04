@@ -59,6 +59,9 @@
  
  *Gardez ce terminal ouvert.*
  
+ Les modèles de mes deux fichiers .env sont disponibles, il vous faudra y entrer votre propre clé token et vos coordonées MongoDB pour le .env du back et le nom du rôle admin que vous aurez choisi pour le .env du front.
+ 
+ 
  ## Tout est bon ! 
  Vous pouvez dès à présent vous rendre à l'adresse "http://localhost:3000" 
  pour vous créer un compte Groupomania, créer des posts et les modifier !
