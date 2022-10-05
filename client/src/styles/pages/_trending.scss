@@ -1,8 +1,8 @@
-.door {
-  @media screen and(max-width: 590px) {
-  padding-right: 30px;
-  }
-}
+// .door {
+//   @media screen and(max-width: 590px) {
+//   padding-right: 30px;
+//   }
+// }
 .trending-page, .favorites-page, .dashboard-page {
   margin: 100px 0;
   padding: 0 200px;
@@ -59,6 +59,8 @@
     & .icons-bis {
       @media screen and(max-width: 590px) {
         left: -50px;
+        scale: 0.95;
+        padding: 20px;
       }
     }
   }

@@ -21,6 +21,7 @@
     background-color: $white;
     position: relative;
     top: -20px;
+    left: -5px;
       }
 
       a {
@@ -53,6 +54,11 @@
         }
         i {
           scale: 1.9;
+        }
+        .fa-unlock {
+          @media screen and(max-width: 590px) {
+          padding-left: 15px;
+          }
         }
         img {
           @media screen and(max-width: 590px) {
