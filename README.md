@@ -18,8 +18,15 @@
  https://course.oc-static.com/projects/DWJ_FR_P7/Cahier+des+charges+Groupomania.pdf
  
  
- ## Outils utilisés :
- NodeJs, React, MongoDB.
+ ## Technologies utilisées :
+ NodeJs, React, MongoDB, Sass.
+ 
+ 
+ ## Dépendences installées :
+ ### Backend :
+ Bcrypt, cookie-parser, cors, dotenv, express, jsonwebtoken, mongoose, multer, nodemon et validator.
+ ### Frontend :
+ Axios, dotenv, js-cookie, node-sass, react, react-dom, react-redux, react-router-dom, react-scripts, redux, redux-devtools-extension, redux-thunk et web-vitals.
  
  
  ## Installation :
@@ -51,6 +58,9 @@
  pour executer l'application (qui sera sur le port 3000)
  
  *Gardez ce terminal ouvert.*
+ 
+ Les modèles de mes deux fichiers .env sont disponibles, il vous faudra y entrer votre propre clé token et vos coordonées MongoDB pour le .env du back et le nom du rôle admin que vous aurez choisi pour le .env du front (et renommer ces deux fichiers .env.example par .env)
+ 
  
  ## Tout est bon ! 
  Vous pouvez dès à présent vous rendre à l'adresse "http://localhost:3000" 
