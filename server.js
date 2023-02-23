@@ -10,15 +10,15 @@ const cors = require("cors");
 const app = express();
 
 //cors
-const corsOptions = {
-  origin: process.env.CLIENT_URL,
-  credentials: true,
-  allowedHeaders: ["sessionId", "Content-Type"],
-  exposedHeaders: ["sessionId"],
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  preflightContinue: false,
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: process.env.CLIENT_URL,
+//   credentials: true,
+//   allowedHeaders: ["sessionId", "Content-Type"],
+//   exposedHeaders: ["sessionId"],
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   preflightContinue: false,
+// };
+// app.use(cors(corsOptions));
 
 // server
 app.listen(process.env.PORT, () => {
