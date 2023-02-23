@@ -2,13 +2,15 @@ const mongoose = require("mongoose");
 
 mongoose
   .connect(
-    "mongodb+srv://" +
-      process.env.MDB_USERNAME +
-      ":" +
-      process.env.MDB_PASSWORD +
-      "@" +
-      process.env.MDB_CLUSTER +
-      ".mongodb.net/groupomania",
+    process.env.DATABASE_URL,
+
+    // "mongodb+srv://" +
+    //   process.env.MDB_USERNAME +
+    //   ":" +
+    //   process.env.MDB_PASSWORD +
+    //   "@" +
+    //   process.env.MDB_CLUSTER +
+    //   ".mongodb.net/groupomania",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
