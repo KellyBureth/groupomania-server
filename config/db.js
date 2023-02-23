@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-
+const connectionString = process.env.DATABASE_URL;
 mongoose
   .connect(
-    process.env.DATABASE_URL,
+    connectionString,
 
     // "mongodb+srv://" +
     //   process.env.MDB_USERNAME +
