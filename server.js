@@ -38,7 +38,7 @@ app.get("/jwtid", requireAuth, (req, res) => {
 
 //ajout pour permettre aux token de se créer au login quand l'app est déployée
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://groupomania-intranet.netlify.app/*"); // d'accéder à notre API depuis n'importe quelle origine ( '*' ) donc tout le monde peut acceder à l'api
+  res.setHeader("Access-Control-Allow-Origin", "groupomania-intranet.netlify.app"); // d'accéder à notre API depuis n'importe quelle origine ( '*' ) donc tout le monde peut acceder à l'api
   res.setHeader(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
