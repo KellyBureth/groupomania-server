@@ -22,7 +22,7 @@ app.use(function(req, res, next) {
 const corsOptions = {
   origin: process.env.CLIENT_URL,
   credentials: true,
-  allowedOrigins: ["https://groupomania-intranet.netlify.app/"],
+  //allowedOrigins: ["https://groupomania-intranet.netlify.app/"],
   allowedHeaders: ["sessionId", "Content-Type"],
   exposedHeaders: ["sessionId"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
