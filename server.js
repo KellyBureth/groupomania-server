@@ -32,7 +32,7 @@ app.use(cors(corsOptions));
 
 // server
 app.listen(process.env.PORT || 3000, () => {
-  console.log(Listening on port ${process.env.PORT});
+  console.log(`Listening on port ${process.env.PORT}`);
 });
 
 //pour parser la requete (la mettre au bon format), ça remplace bodyparser qui est inclus dans express
