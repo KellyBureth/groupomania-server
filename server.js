@@ -43,6 +43,7 @@ app.use(cookieParser());
 // jwt
 app.get("*", checkUser);
 app.get("/jwtid", requireAuth, (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://groupomania-intranet.netlify.app");
   res.status(200).send(res.locals.user._id);
 });
 
