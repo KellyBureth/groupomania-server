@@ -11,19 +11,18 @@ const app = express();
 
 // Middleware pour gérer les erreurs de CORS
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://groupomania-intranet.netlify.app"); // autorise uniquement les requêtes provenant de ce domaine
+  res.header("Access-Control-Allow-Origin", "https://groupomania-intranet.netlify.app/%22); // autorise uniquement les requêtes provenant de ce domaine
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS"); // autorise les méthodes HTTP utilisées
   res.header("Access-Control-Allow-Credentials", true); // autorise les cookies et les en-têtes de sécurité
   next();
 });
 
-
 //cors
 const corsOptions = {
   origin: process.env.CLIENT_URL,
   credentials: true,
-  allowedOrigins: ["https://groupomania-intranet.netlify.app"],
+  allowedOrigins: ["https://groupomania-intranet.netlify.app/"],
   allowedHeaders: ["sessionId", "Content-Type"],
   exposedHeaders: ["sessionId"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -31,20 +30,9 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-
-//ajout pour permettre aux token de se créer au login quand l'app est déployée
-//app.use((req, res, next) => {
-//  res.setHeader("Access-Control-Allow-Origin", "https://groupomania-intranet.netlify.app"); // d'accéder à notre API depuis n'importe quelle origine ( '*' ) donc tout le monde peut acceder à l'api
-//  res.setHeader(
-//    "Access-Control-Allow-Headers",
-//    "Origin, X-Requested-With, Accept, Content-Type"
-//  ); //autorisation d'ajouter les headers mentionnés aux requêtes envoyées vers notre API  (Origin , X-Requested-With , etc.) ;
-//  next();
-//});
-
 // server
 app.listen(process.env.PORT || 3000, () => {
-  console.log(`Listening on port ${process.env.PORT}`);
+  console.log(Listening on port ${process.env.PORT});
 });
 
 //pour parser la requete (la mettre au bon format), ça remplace bodyparser qui est inclus dans express
