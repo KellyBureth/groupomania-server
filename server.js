@@ -10,11 +10,11 @@ const cors = require("cors");
 const app = express();
 
 // Middleware pour gérer les erreurs de CORS
-app.use(function(req, res, next) {
+app.use((req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); // autorise uniquement les requêtes provenant de ce domaine
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS"); // autorise les méthodes HTTP utilisées
-  res.header("Access-Control-Allow-Credentials", true); // autorise les cookies et les en-têtes de sécurité
+  res.header("Access-Control-Allow-Credentials", "include"); // autorise les cookies et les en-têtes de sécurité
   next();
 });
 
