@@ -10,13 +10,26 @@ const cors = require("cors");
 const app = express();
 
 // Middleware pour gérer les erreurs de CORS
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // autorise uniquement les requêtes provenant de ce domaine
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS"); // autorise les méthodes HTTP utilisées
-  res.header("Access-Control-Allow-Credentials", true); // autorise les cookies et les en-têtes de sécurité
+//app.use(function(req, res, next) {
+//  res.header("Access-Control-Allow-Origin", "*"); // autorise uniquement les requêtes provenant de ce domaine
+//  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS"); // autorise les méthodes HTTP utilisées
+//  res.header("Access-Control-Allow-Credentials", true); // autorise les cookies et les en-têtes de sécurité
+//  next();
+//});
+
+
+
+//ajout pour permettre aux token de se créer au login quand l'app est déployée
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*"); // d'accéder à notre API depuis n'importe quelle origine ( '' ) donc tout le monde peut acceder à l'api
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Accept, Content-Type"
+  ); //autorisation d'ajouter les headers mentionnés aux requêtes envoyées vers notre API  (Origin , X-Requested-With , etc.) ;
   next();
 });
+
 
 //cors
 const corsOptions = {
@@ -43,7 +56,6 @@ app.use(cookieParser());
 // jwt
 app.get("*", checkUser);
 app.get("/jwtid", requireAuth, (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://groupomania-intranet.netlify.app");
   res.status(200).send(res.locals.user._id);
 });
 
