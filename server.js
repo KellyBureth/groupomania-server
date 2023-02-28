@@ -9,6 +9,21 @@ const cors = require("cors");
 
 const app = express();
 
+
+//ajout pour permettre aux token de se créer au login quand l'app est déployée
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://groupomania-intranet.netlify.app"); // d'accéder à notre API depuis n'importe quelle origine ( '*' ) donc tout le monde peut acceder à l'api
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
+  ); //autorisation d'ajouter les headers mentionnés aux requêtes envoyées vers notre API  (Origin , X-Requested-With , etc.) ;
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+  ); //autorisation d'envoyer des requêtes avec les méthodes mentionnées ( GET ,POST , etc.).
+  next();
+});
+
 //cors
 const corsOptions = {
   origin: process.env.CLIENT_URL,
@@ -16,8 +31,7 @@ const corsOptions = {
   allowedOrigins: ["https://groupomania-intranet.netlify.app"],
   allowedHeaders: ["sessionId", "Content-Type"],
   exposedHeaders: ["sessionId"],
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTION",
-  add_header Access-Control-Allow-Origin : "https://groupomania-intranet.netlify.app",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   preflightContinue: false,
 };
 app.use(cors(corsOptions));
@@ -37,21 +51,6 @@ app.get("*", checkUser);
 app.get("/jwtid", requireAuth, (req, res) => {
   res.status(200).send(res.locals.user._id);
 });
-
-//ajout pour permettre aux token de se créer au login quand l'app est déployée
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://groupomania-intranet.netlify.app"); // d'accéder à notre API depuis n'importe quelle origine ( '*' ) donc tout le monde peut acceder à l'api
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
-  ); //autorisation d'ajouter les headers mentionnés aux requêtes envoyées vers notre API  (Origin , X-Requested-With , etc.) ;
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
-  ); //autorisation d'envoyer des requêtes avec les méthodes mentionnées ( GET ,POST , etc.).
-  next();
-});
-
 
 // routes
 app.use("/api/user", userRoutes);
