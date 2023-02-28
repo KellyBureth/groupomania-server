@@ -63,6 +63,8 @@ app.use(cookieParser());
 app.get("*", checkUser);
 app.get("/jwtid", requireAuth, (req, res) => {
   res.status(200).send(res.locals.user._id);
+  res.status(200).send({ jwtid: req.cookies.jwt }); //chatgpt
+
 });
 
 // routes
