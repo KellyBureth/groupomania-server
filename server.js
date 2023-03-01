@@ -28,7 +28,7 @@ const corsOptions = {
   //allowedOrigins: ["https://groupomania-intranet.netlify.app/"],
   allowedHeaders: ["sessionId", "Content-Type"],
   exposedHeaders: ["sessionId"],
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTION",
   preflightContinue: false,
 };
 app.use(cors(corsOptions));
