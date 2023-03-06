@@ -18,36 +18,41 @@ const app = express();
 //  next();
 //});
 
-
+//dave grey cors option
+const corsOptions = {
+  origin: ["https://groupomania-intranet.netlify.app"],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
 
 
 //cors
-const corsOptions = {
-  origin: process.env.CLIENT_URL,
-  credentials: true,
-  allowedOrigins: ["https://groupomania-intranet.netlify.app/"],
-  allowedHeaders: ["sessionId", "Content-Type"],
-  exposedHeaders: ["sessionId"],
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTION",
-  preflightContinue: false,
-};
+//const corsOptions = {
+//  origin: process.env.CLIENT_URL,
+//  credentials: true,
+//  allowedOrigins: ["https://groupomania-intranet.netlify.app/"],
+//  allowedHeaders: ["sessionId", "Content-Type"],
+//  exposedHeaders: ["sessionId"],
+//  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTION",
+//  preflightContinue: false,
+//};
 app.use(cors(corsOptions));
 
 
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://groupomania-intranet.netlify.app"); // d'accéder à notre API depuis n'importe quelle origine ( '*' ) donc tout le monde peut acceder à l'api
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
-  ); //autorisation d'ajouter les headers mentionnés aux requêtes envoyées vers notre API  (Origin , X-Requested-With , etc.) ;
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
-  ); //autorisation d'envoyer des requêtes avec les méthodes mentionnées ( GET ,POST , etc.).
-  next();
-});
+//app.use((req, res, next) => {
+//  res.setHeader("Access-Control-Allow-Origin", "https://groupomania-intranet.netlify.app"); // d'accéder à notre API depuis n'importe quelle origine ( '*' ) donc tout le monde peut acceder à l'api
+//  res.setHeader(
+//    "Access-Control-Allow-Headers",
+//    "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
+//  ); //autorisation d'ajouter les headers mentionnés aux requêtes envoyées vers notre API  (Origin , X-Requested-With , etc.) ;
+//  res.setHeader("Access-Control-Allow-Credentials", "true");
+//  res.setHeader(
+//    "Access-Control-Allow-Methods",
+//    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+//  ); //autorisation d'envoyer des requêtes avec les méthodes mentionnées ( GET ,POST , etc.).
+//  next();
+//});
 
 // server
 app.listen(process.env.PORT || 3000, () => {
