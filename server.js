@@ -25,7 +25,7 @@ const app = express();
 const corsOptions = {
   origin: process.env.CLIENT_URL,
   credentials: true,
-  //allowedOrigins: ["https://groupomania-intranet.netlify.app/"],
+  allowedOrigins: ["https://groupomania-intranet.netlify.app/"],
   allowedHeaders: ["sessionId", "Content-Type"],
   exposedHeaders: ["sessionId"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTION",
@@ -36,7 +36,7 @@ app.use(cors(corsOptions));
 
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "groupomania-intranet.netlify.app"); // d'accéder à notre API depuis n'importe quelle origine ( '*' ) donc tout le monde peut acceder à l'api
+  res.setHeader("Access-Control-Allow-Origin", "https://groupomania-intranet.netlify.app"); // d'accéder à notre API depuis n'importe quelle origine ( '*' ) donc tout le monde peut acceder à l'api
   res.setHeader(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
