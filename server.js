@@ -19,11 +19,15 @@ const app = express();
 //});
 
 //dave grey cors option
-const corsOptions = {
-  origin: ["https://groupomania-intranet.netlify.app"],
-  credentials: true,
-  optionsSuccessStatus: 200
-};
+//const corsOptions = {
+//  origin: ["https://groupomania-intranet.netlify.app"],
+//  credentials: true,
+//  optionsSuccessStatus: 200
+//};
+
+
+//avan tutor heroku video d'elodie
+app.use(cors());
 
 
 //cors
@@ -36,7 +40,9 @@ const corsOptions = {
 //  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTION",
 //  preflightContinue: false,
 //};
-app.use(cors(corsOptions));
+
+
+//app.use(cors(corsOptions));
 
 
 
