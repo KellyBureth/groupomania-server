@@ -9,6 +9,20 @@ const cors = require("cors");
 
 const app = express();
 
+
+
+//cors
+const corsOptions = {
+  origin: process.env.CLIENT_URL,
+  credentials: true,
+  allowedHeaders: ["sessionId", "Content-Type"],
+  exposedHeaders: ["sessionId"],
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  preflightContinue: false,
+};
+app.use(cors(corsOptions));
+
+
 // Middleware pour gérer les erreurs de CORS
 //app.use(function(req, res, next) {
 //  res.header("Access-Control-Allow-Origin", "*"); // autorise uniquement les requêtes provenant de ce domaine
@@ -27,7 +41,7 @@ const app = express();
 
 
 //avan tutor heroku video d'elodie
-app.use(cors());
+//app.use(cors());
 
 
 //cors
