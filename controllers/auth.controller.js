@@ -40,6 +40,7 @@ module.exports.signIn = async (req, res) => {
 
 module.exports.logout = (req, res) => {
   //res.cookie("jwt", "", { maxAge: 1 }); //dure 1ms
+  req.session.destroy();
   res.clearCookie('jwt');
   //res.redirect("/");
   console.log("resclearCookie");
