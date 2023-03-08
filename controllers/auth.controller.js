@@ -39,11 +39,11 @@ module.exports.signIn = async (req, res) => {
 
 module.exports.logout = (req, res) => {
   
-     console.log("token avant clear", token);
+     console.log("token avant clear", createToken());
    res.clearCookie("jwt");
-   console.log("token apres clear avant redir", token);
+   console.log("token apres clear avant redir", jwt);
    res.redirect("/");
-   console.log("token apres redir", token);
+   console.log("token apres redir", jwt);
   
   //req.session.destroy((err) => {
   //  if (err) {
