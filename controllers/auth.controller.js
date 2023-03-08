@@ -37,9 +37,29 @@ module.exports.signIn = async (req, res) => {
 };
 
 module.exports.logout = (req, res) => {
+  
+  req.session.destroy((err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.clearCookie("connect.sid");
+      res.redirect("/");
+    }
+  });
+  
+  req.session.destroy((err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.clearCookie("connect.sid");
+      res.redirect("/");
+    }
+  });
+  
+  
   //res.cookie("jwt", "", { maxAge: 1 }); //dure 1ms
-   res.clearCookie("jwt");
-  console.log("deco");
-  res.redirect("/");
-  console.log("redi");
+  // res.clearCookie("jwt");
+  //console.log("deco");
+ // res.redirect("/");
+ // console.log("redi");
 };
