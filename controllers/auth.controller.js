@@ -49,11 +49,11 @@ module.exports.logout = (req, res) => {
   //  if (err) {
   //    console.log(err);
   //  } else {
-  //    console.log("token avant clear", createToken());
+  //    console.log("createtoken avant clear", createToken(), jwt);
   //    res.clearCookie("jwt");
-  //    console.log("token apres clear avant redir", jwt);
+  //    console.log("token apres clear avant redir",createToken(),  jwt);
   //    res.redirect("/");
-  //    console.log("token apres redir", jwt);
+  //    console.log("token apres redir", createToken(), jwt);
   //  }
   //});
   
