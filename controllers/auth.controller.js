@@ -39,18 +39,23 @@ module.exports.signIn = async (req, res) => {
 
 module.exports.logout = (req, res) => {
   
+     console.log("token avant clear", token);
+   res.clearCookie("jwt");
+   console.log("token apres clear avant redir", token);
+   res.redirect("/");
+   console.log("token apres redir", token);
   
-  req.session.destroy((err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("token avant clear", token);
-      res.clearCookie("jwt");
-      console.log("token apres clear avant redir", token);
-      res.redirect("/");
-      console.log("token apres redir", token);
-    }
-  });
+  //req.session.destroy((err) => {
+  //  if (err) {
+  //    console.log(err);
+  //  } else {
+  //    console.log("token avant clear", token);
+  //    res.clearCookie("jwt");
+  //    console.log("token apres clear avant redir", token);
+  //    res.redirect("/");
+  //    console.log("token apres redir", token);
+  //  }
+  //});
   
   
   //res.cookie("jwt", "", { maxAge: 1 }); //dure 1ms
