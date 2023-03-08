@@ -2,8 +2,8 @@ const UserModel = require("../models/user.model");
 const jwt = require("jsonwebtoken");
 const { signUpErrors, signInErrors } = require("../utils/errors.utils");
 
-//const maxAge = 3 * 24 * 60 * 60 * 1000;
-const maxAge = 0;
+const maxAge = 3 * 24 * 60 * 60 * 1000;
+//const maxAge = 0;
 
 const createToken = (id) => {
   return jwt.sign({ id }, process.env.TOKEN_SECRET, {
@@ -43,7 +43,7 @@ module.exports.logout = (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      res.clearCookie("connect.sid");
+      res.clearCookie("jwt");
       res.redirect("/");
     }
   });
@@ -52,7 +52,8 @@ module.exports.logout = (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      res.clearCookie("connect.sid");
+      res.clearCookie("jwt");
+      console.log(err);
       res.redirect("/");
     }
   });
