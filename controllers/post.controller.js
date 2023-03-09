@@ -17,8 +17,8 @@ module.exports.readPost = (req, res) => {
 module.exports.createPost = async (req, res) => {
   let fileName;
        console.log("hi");
-     console.log("__dirname:", __dirname);
-      console.log("fileName:", fileName);
+    // console.log("__dirname:", __dirname);
+    //  console.log("fileName:", fileName);
   if (req.file !== null) {
     try {
       if (
@@ -34,25 +34,25 @@ module.exports.createPost = async (req, res) => {
       return res.status(201).json({ errors });
     }
     fileName = req.body.posterId + Date.now() + ".jpg";
-console.log("__dirname:", __dirname);
+//console.log("__dirname:", __dirname);
     await pipeline(
       req.file.stream,
-      console.log("__dirname:", __dirname),
-      console.log("fileName:", fileName),
+     // console.log("__dirname:", __dirname),
+    //  console.log("fileName:", fileName),
       fs.createWriteStream(
         //`/uploads/posts/${fileName}` 
         //'' + `${__dirname}/../client/public/uploads/posts/${fileName}` //gpt
         //"./uploads/posts/" + fileName
         //"https://groupomania-intranet.netlify.app/uploads/posts/" + fileName //nn
-        `${__dirname}/uploads/posts/${fileName}` //nn
-        // `${__dirname}/../client/public/uploads/posts/${fileName}` //initial
+      //  `${__dirname}/uploads/posts/${fileName}` //nn
+         `${__dirname}/../client/public/uploads/posts/${fileName}` //initial
 
       )  ,
-      console.log("__dirname:", __dirname),
-      console.log("fileName:", fileName),
+      //console.log("__dirname:", __dirname),
+     //console.log("fileName:", fileName),
     );
   }
-
+console.log(__dirname + "/../client/public/uploads/posts/" + fileName);
   const newPost = new postModel({
     posterId: req.body.posterId,
     message: req.body.message,
