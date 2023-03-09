@@ -36,8 +36,9 @@ module.exports.createPost = async (req, res) => {
     await pipeline(
       req.file.stream,
       fs.createWriteStream(
-        "https://groupomania-intranet.netlify.app/uploads/posts/" + fileName
-        //`${__dirname}/uploads/posts/${fileName}`
+        "./uploads/posts/" + fileName
+        //"https://groupomania-intranet.netlify.app/uploads/posts/" + fileName //nn
+        //`${__dirname}/uploads/posts/${fileName}` //nn
         // `${__dirname}/../client/public/uploads/posts/${fileName}` //initial
       )
     );
