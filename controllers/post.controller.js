@@ -42,7 +42,8 @@ module.exports.createPost = async (req, res) => {
      // console.log("__dirname:", __dirname),
     //  console.log("fileName:", fileName),
       fs.createWriteStream(
-        "groupomania-server-production.up.railway.app/client/public/uploads/posts/" + fileName
+        "https://groupomania-server-production.up.railway.app/client/public/uploads/posts/" + fileName //genie clim177 9mn urlback(root)/client
+
         //`/uploads/posts/${fileName}` 
         //'' + `${__dirname}/../client/public/uploads/posts/${fileName}` //gpt
         //"./uploads/posts/" + fileName
