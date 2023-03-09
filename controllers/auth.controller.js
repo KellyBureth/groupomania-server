@@ -29,7 +29,7 @@ module.exports.signIn = async (req, res) => {
   try {
     const user = await UserModel.login(email, password);
     const token = createToken(user._id);
-    res.cookie("jwt", token, { httpOnly: true, maxAge, sameSite: 'none', secure : true, path:"/"}); //brody no domain
+    res.cookie("jwt", token, { httpOnly: true, maxAge, sameSite: 'none', secure : true}); //, path:"/"
     res.status(200).json({ user: user._id });
   } catch (err) {
     const errors = signInErrors(err);
@@ -40,12 +40,12 @@ module.exports.signIn = async (req, res) => {
 module.exports.logout = (req, res) => {
   
      console.log("token avant clear", createToken(), jwt);
-  // res.clearCookie("jwt");
-  res.clearCookie("jwt", {path:"/"});
+  res.clearCookie("jwt");
+ // res.clearCookie("jwt", {path:"/"});
   //res.cookie("jwt", "", { maxAge: 1, path:"/jwtid" }); //dure 1ms ok fire
    console.log("token apres clear avant redir", createToken(), jwt);
   
-   res.redirect("/");
+   //res.redirect("/");
    console.log("token apres redir", createToken(), jwt);
   
   //req.session.destroy((err) => {
