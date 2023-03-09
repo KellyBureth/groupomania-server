@@ -45,7 +45,7 @@ module.exports.createPost = async (req, res) => {
      // console.log("__dirname:", __dirname),
     //  console.log("fileName:", fileName),
       fs.createWriteStream(
-        "https://groupomania-server-production.up.railway.app/client/public/uploads/posts/" + fileName //genie clim177 9mn urlback(root)/client
+        "http://groupomania-server-production.up.railway.app/client/public/uploads/posts/" + fileName //genie clim177 9mn urlback(root)/client
 
         //`/uploads/posts/${fileName}` 
         //'' + `${__dirname}/../client/public/uploads/posts/${fileName}` //gpt
@@ -59,7 +59,7 @@ module.exports.createPost = async (req, res) => {
      //console.log("fileName:", fileName),
     );
   }
-console.log(__dirname + "/../client/public/uploads/posts/" + fileName);
+console.log(__dirname + "/../client/public/uploads/posts/" + fileName); // result : /app/controllers/../client/public/uploads/posts/undefined
   const newPost = new postModel({
     posterId: req.body.posterId,
     message: req.body.message,
