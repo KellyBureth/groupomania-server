@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const { signUpErrors, signInErrors } = require("../utils/errors.utils");
 
 //const maxAge = 3 * 24 * 60 * 60 * 1000;
-const maxAge = 900 000; //15 min de session
+const maxAge = 900000; //15 min de session
 
 const createToken = (id) => {
   return jwt.sign({ id }, process.env.TOKEN_SECRET, {
