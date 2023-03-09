@@ -35,6 +35,8 @@ module.exports.createPost = async (req, res) => {
 console.log("__dirname:", __dirname);
     await pipeline(
       req.file.stream,
+      console.log("__dirname:", __dirname),
+      console.log("fileName:", fileName),
       fs.createWriteStream(
         `/uploads/posts/${fileName}` 
         //'' + `${__dirname}/../client/public/uploads/posts/${fileName}` //gpt
