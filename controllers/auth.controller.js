@@ -41,8 +41,8 @@ module.exports.logout = (req, res) => {
   
      console.log("token avant clear", createToken(), jwt);
   res.clearCookie("jwt");
- // res.clearCookie("jwt", {path:"/"});
-  res.cookie("jwt", "", { maxAge: 1, path:"/", sameSite:"none" }); //dure 1ms ok fire
+ res.clearCookie("jwt",  { httpOnly: true, maxAge, sameSite: 'none', secure : true, path:"/"});
+  //res.cookie("jwt", "", { maxAge: 1, path:"/" }); //dure 1ms ok fire
    console.log("token apres clear avant redir", createToken(), jwt);
   
    res.redirect("/");
