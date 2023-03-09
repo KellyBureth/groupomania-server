@@ -16,10 +16,11 @@ module.exports.readPost = (req, res) => {
 
 module.exports.createPost = async (req, res) => {
   let fileName;
-       console.log("hi");
+       console.log("19");
     // console.log("__dirname:", __dirname);
     //  console.log("fileName:", fileName);
   if (req.file !== null) {
+      console.log("23");
     try {
       if (
         req.file.detectedMimeType != "image/jpg" &&
@@ -27,12 +28,13 @@ module.exports.createPost = async (req, res) => {
         req.file.detectedMimeType != "image/jpeg"
       )
         throw Error("invalid file");
-
+  console.log("31");
       if (req.file.size > 1000000) throw Error("max size");
     } catch (err) {
       const errors = uploadErrors(err);
       return res.status(201).json({ errors });
     }
+      console.log("36");
     fileName = req.body.posterId + Date.now() + ".jpg";
 //console.log("__dirname:", __dirname);
     await pipeline(
