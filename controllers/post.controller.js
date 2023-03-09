@@ -17,6 +17,9 @@ module.exports.readPost = (req, res) => {
 module.exports.createPost = async (req, res) => {
   let fileName;
        console.log("19");
+   console.log("proto", req.protocol);
+   console.log("host", req.get("host"));
+   console.log("22");
     // console.log("__dirname:", __dirname);
     //  console.log("fileName:", fileName);
   if (req.file !== null) {
