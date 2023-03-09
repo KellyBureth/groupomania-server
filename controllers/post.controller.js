@@ -32,7 +32,7 @@ module.exports.createPost = async (req, res) => {
       return res.status(201).json({ errors });
     }
     fileName = req.body.posterId + Date.now() + ".jpg";
-
+console.log("__dirname:", __dirname);
     await pipeline(
       req.file.stream,
       fs.createWriteStream(
