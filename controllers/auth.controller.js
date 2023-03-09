@@ -40,12 +40,12 @@ module.exports.signIn = async (req, res) => {
 module.exports.logout = (req, res) => {
   
      console.log("token avant clear", createToken(), jwt);
-   res.clearCookie("jwt");
-//  res.clearCookie("jwt", {path:"/"});
+  // res.clearCookie("jwt");
+  res.clearCookie("jwt", {path:"/"});
   //res.cookie("jwt", "", { maxAge: 1, path:"/jwtid" }); //dure 1ms ok fire
    console.log("token apres clear avant redir", createToken(), jwt);
   
-   //res.redirect("/");
+   res.redirect("/");
    console.log("token apres redir", createToken(), jwt);
   
   //req.session.destroy((err) => {
