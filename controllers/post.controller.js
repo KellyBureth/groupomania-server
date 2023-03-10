@@ -7,6 +7,9 @@ const fs = require("fs");
 const { promisify } = require("util");
 const pipeline = promisify(require("stream").pipeline);
 
+    const uploadDir = __basedir + '/client/public/uploads/posts/';
+
+
 module.exports.readPost = (req, res) => {
   PostModel.find((err, docs) => {
     if (!err) res.send(docs);
@@ -19,7 +22,7 @@ module.exports.createPost = async (req, res) => {
        console.log("19");
    console.log("proto", req.protocol);
    console.log("host", req.get("host"));
-   console.log("22");
+   console.log("22 uploadDir", uploadDir);
     // console.log("__dirname:", __dirname);
     //  console.log("fileName:", fileName);
   if (req.file !== null) {
@@ -39,7 +42,6 @@ module.exports.createPost = async (req, res) => {
     }
       console.log("36");
     fileName = req.body.posterId + Date.now() + ".jpg";
-    const uploadDir = __basedir + '/client/public/uploads/posts/';
 //console.log("__dirname:", __dirname);
     await pipeline(
       req.file.stream,
