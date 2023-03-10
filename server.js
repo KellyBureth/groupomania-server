@@ -8,7 +8,7 @@ const { checkUser, requireAuth } = require("./middleware/auth.middleware");
 const cors = require("cors");
 
 const app = express();
-
+global.__basedir = __dirname; //gpt pour upload img
 //cors
 const corsOptions = {
   origin: process.env.CLIENT_URL,
