@@ -39,13 +39,15 @@ module.exports.createPost = async (req, res) => {
     }
       console.log("36");
     fileName = req.body.posterId + Date.now() + ".jpg";
+    const uploadDir = __basedir + '/client/public/uploads/posts/';
 //console.log("__dirname:", __dirname);
     await pipeline(
       req.file.stream,
      // console.log("__dirname:", __dirname),
     //  console.log("fileName:", fileName),
       fs.createWriteStream(
-        './public/uploads/posts/' + fileName //gpt
+        uploadDir + fileName
+        //'./public/uploads/posts/' + fileName //gpt
         //"http://groupomania-server-production.up.railway.app/client/public/uploads/posts/" + fileName //genie clim177 9mn urlback(root)/client
 
         //`/uploads/posts/${fileName}` 
