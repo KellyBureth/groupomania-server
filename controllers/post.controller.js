@@ -45,6 +45,7 @@ module.exports.createPost = async (req, res) => {
      // console.log("__dirname:", __dirname),
     //  console.log("fileName:", fileName),
       fs.createWriteStream(
+        './public/uploads/posts/' + fileName //gpt
         //"http://groupomania-server-production.up.railway.app/client/public/uploads/posts/" + fileName //genie clim177 9mn urlback(root)/client
 
         //`/uploads/posts/${fileName}` 
@@ -52,7 +53,7 @@ module.exports.createPost = async (req, res) => {
         //"./uploads/posts/" + fileName
         //"https://groupomania-intranet.netlify.app/uploads/posts/" + fileName //nn
       //  `${__dirname}/uploads/posts/${fileName}` //nn
-         `${__dirname}/../client/public/uploads/posts/${fileName}` //initial
+         //`${__dirname}/../client/public/uploads/posts/${fileName}` //initial
 
       )  ,
       //console.log("__dirname:", __dirname),
