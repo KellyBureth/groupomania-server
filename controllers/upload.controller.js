@@ -30,7 +30,8 @@ module.exports.uploadProfil = async (req, res) => {
     //)
     
     multer.diskStorage({
-  destination: './images/',
+  //destination: './images/',
+  destination: `${__dirname}/../client/public/uploads/profil/`,
   filename: (req, file, cb) => {
     return cb(null, new Date().toISOString().replace(/[/\:]/g, "_") + file.originalname)
   },
