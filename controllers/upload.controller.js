@@ -1,6 +1,7 @@
 const UserModel = require("../models/user.model");
 const PostModel = require("../models/post.model");
-const fs = require("fs");
+//const fs = require("fs");
+const multer = require("multer");
 const { promisify } = require("util");
 const pipeline = promisify(require("stream").pipeline);
 const { uploadErrors } = require("../utils/errors.utils");
@@ -24,9 +25,17 @@ module.exports.uploadProfil = async (req, res) => {
 
   await pipeline(
     req.file.stream,
-    fs.createWriteStream(
-      `${__dirname}/../client/public/uploads/profil/${fileName}` //stock image dans dossier upload profil dans le front
-    )
+    //fs.createWriteStream(
+    //  `${__dirname}/../client/public/uploads/profil/${fileName}` //stock image dans dossier upload profil dans le front
+    //)
+    
+    multer.diskStorage({
+  destination: './images/',
+  filename: (req, file, cb) => {
+    return cb(null, new Date().toISOString().replace(/[/\:]/g, "_") + file.originalname)
+  },
+});
+    
   );
 
   try {
