@@ -15,6 +15,10 @@ module.exports.uploadProfil = async (req, res) => {
     "image/png": "png",
   };
 
+  
+
+module.exports = multer({ storage: storage }).single("image");
+  
   try {
     if (!MIME_TYPES) throw Error("invalid file"); //un throw passe directement au catch
 
