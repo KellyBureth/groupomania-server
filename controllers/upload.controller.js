@@ -2,6 +2,8 @@ const UserModel = require("../models/user.model");
 const PostModel = require("../models/post.model");
 //const fs = require("fs");
 const multer = require("multer");
+const path = require('path');
+
 const { promisify } = require("util");
 const pipeline = promisify(require("stream").pipeline);
 const { uploadErrors } = require("../utils/errors.utils");
