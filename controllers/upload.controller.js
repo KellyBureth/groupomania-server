@@ -31,18 +31,18 @@ module.exports = multer({ storage: storage }).single("image");
 
   await pipeline(
     req.file.stream,
-    //fs.createWriteStream(
-    //  `${__dirname}/../client/public/uploads/profil/${fileName}` //stock image dans dossier upload profil dans le front
-    //)
+    fs.createWriteStream(
+      `${__dirname}/../client/public/uploads/profil/${fileName}` //stock image dans dossier upload profil dans le front
+    )
     
-    multer.diskStorage({
+    //multer.diskStorage({
   //destination: './images/',
-  destination: `${__dirname}/../client/public/uploads/profil/`,
+  //destination: `${__dirname}/../client/public/uploads/profil/`,
   //filename: (req, file, cb) => {
     //return cb(null, new Date().toISOString().replace(/[/\:]/g, "_") + file.originalname)
-      filename: fileName
-  },
-});
+     // filename: fileName
+ // },
+//});
     
   );
 
